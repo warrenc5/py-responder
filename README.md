@@ -1,2 +1,2 @@
 # py-responder
-simple kafka relays to web service
+simple avro kafka relays to wiremock or web service
