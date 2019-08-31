@@ -1,0 +1,15 @@
+---
+header:
+  subscriberId: "614046863323"
+  requestId: "6f745407-d1f3-4fb6-b5f0-c15120307f92"
+  chargingContextId: "-5422359699190035948"
+quotaResult:
+  grantedUnits: 79887546
+  ratingGroup: -375124648
+  responseCode: "Success"
+  validityTime: -1392802340
+serviceResult:
+  chargingSessionId: "0fc890ff-f349-4027-91a5-8b5bf8bfaa11"
+  responseCode: "SUCCESS"
+serviceInformation:
+  any: {}

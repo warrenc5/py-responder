@@ -1,0 +1,96 @@
+{
+   "name" : "OCSServiceResponse",
+   "namespace" : "com.effortel.service.model.avro",
+   "type" : "record",
+   "fields" : [
+      {
+         "name" : "header",
+         "type" : {
+            "name" : "Header",
+            "type" : "record",
+            "fields" : [
+               {
+                  "name" : "subscriberId",
+                  "type" : "string"
+               },
+               {
+                  "type" : "string",
+                  "name" : "requestId"
+               },
+               {
+                  "name" : "chargingContextId",
+                  "type" : "string"
+               }
+            ]
+         }
+      },
+      {
+         "type" : {
+            "name" : "QuotaResult",
+            "fields" : [
+               {
+                  "type" : "int",
+                  "name" : "grantedUnits"
+               },
+               {
+                  "type" : "int",
+                  "name" : "ratingGroup"
+               },
+               {
+                  "name" : "responseCode",
+                  "type" : "string"
+               },
+               {
+                  "name" : "validityTime",
+                  "type" : "int"
+               }
+            ],
+            "type" : "record"
+         },
+         "name" : "quotaResult"
+      },
+      {
+         "type" : {
+            "name" : "ServiceResult",
+            "type" : "record",
+            "fields" : [
+               {
+                  "type" : "string",
+                  "name" : "chargingSessionId"
+               },
+               {
+                  "name" : "responseCode",
+                  "type" : {
+                     "symbols" : [
+                        "SUCCESS",
+                        "FAILURE",
+                        "INSUFFICIENT_CREDIT_PARTIAL_RESERVATION",
+                        "NO_CREDIT_AVAILABLE",
+                        "SUBSCRIBER_NOT_FOUND"
+                     ],
+                     "type" : "enum",
+                     "name" : "ResponseCode"
+                  }
+               }
+            ]
+         },
+         "name" : "serviceResult"
+      },
+      {
+         "name" : "serviceInformation",
+         "type" : {
+            "name" : "ServiceInformation",
+            "fields" : [
+               {
+                  "name" : "any",
+                  "type" : {
+                     "type" : "map",
+                     "values" : "string"
+                  }
+               }
+            ],
+            "type" : "record"
+         }
+      }
+   ]
+}

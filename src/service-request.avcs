@@ -1,0 +1,117 @@
+{
+   "namespace" : "com.effortel.service.model.avro",
+   "type" : "record",
+   "name" : "OCSServiceRequest",
+   "fields" : [
+      {
+         "type" : {
+            "name" : "Header",
+            "fields" : [
+               {
+                  "type" : "string",
+                  "name" : "subscriberId"
+               },
+               {
+                  "type" : "string",
+                  "name" : "requestId"
+               },
+               {
+                  "name" : "chargingContextId",
+                  "type" : "string"
+               }
+            ],
+            "type" : "record"
+         },
+         "name" : "header"
+      },
+      {
+         "type" : {
+            "fields" : [
+               {
+                  "type" : {
+                     "type" : "enum",
+                     "name" : "OperationType",
+                     "symbols" : [
+                        "opFirst",
+                        "opIntermediate",
+                        "opFinal"
+                     ]
+                  },
+                  "name" : "operationType"
+               },
+               {
+                  "type" : "string",
+                  "name" : "chargingSessionId"
+               },
+               {
+                  "name" : "serviceIdentifier",
+                  "type" : "string"
+               }
+            ],
+            "name" : "ServiceRequest",
+            "type" : "record"
+         },
+         "name" : "serviceRequest"
+      },
+      {
+         "name" : "quotaRequest",
+         "type" : {
+            "name" : "QuotaRequest",
+            "fields" : [
+               {
+                  "name" : "requestedUnits",
+                  "type" : "int"
+               },
+               {
+                  "name" : "usedUnits",
+                  "type" : "int"
+               },
+               {
+                  "name" : "ratingGroup",
+                  "type" : "int"
+               }
+            ],
+            "type" : "record"
+         }
+      },
+      {
+         "name" : "trafficTypeRequest",
+         "type" : {
+            "name" : "TrafficTypeRequest",
+            "fields" : [
+               {
+                  "name" : "serviceScenario",
+                  "type" : {
+                     "symbols" : [
+                        "MO",
+                        "MT"
+                     ],
+                     "name" : "CallType",
+                     "type" : "enum"
+                  }
+               },
+               {
+                  "name" : "roamingPosition",
+                  "type" : {
+                     "type" : "enum",
+                     "name" : "RoamingPosition",
+                     "symbols" : [
+                        "HPLMN",
+                        "VPLMN"
+                     ]
+                  }
+               }
+            ],
+            "type" : "record"
+         }
+      },
+        {
+         "type" : {
+            "name" : "ServiceInformation",
+            "values" : "string",
+            "type" : "map"
+         },
+         "name" : "serviceInformation"
+      }
+   ]
+}
